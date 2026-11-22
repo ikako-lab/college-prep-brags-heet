@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Brag Sheet Interviewer</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar no-print">
+    <div class="brand" id="homeLink">Brag Sheet <span>Interviewer</span></div>
+    <nav id="tabs" hidden>
+      <span class="who" id="whoName"></span>
+      <button data-view="interview" class="tab">Interview</button>
+      <button data-view="notebook" class="tab">Notebook</button>
+      <button data-view="sheet" class="tab">Brag sheet</button>
+    </nav>
+  </header>
+
+  <!-- Home: pick a student -->
+  <main id="view-home" class="view">
+    <section class="home">
+      <h1>Your high school story</h1>
+      <p class="lede">Talk with an AI counselor who helps you remember what really happened in high school, then turn it into a brag sheet for your counselor and teachers.</p>
+      <p class="goal"><strong>Your goal is not to sound impressive.</strong> It's to remember what really happened. Short, imperfect answers are fine, and you can skip anything.</p>
+      <div id="studentList" class="student-list"></div>
+      <form id="newStudent" class="new-student">
+        <input id="newName" placeholder="Student's first name" autocomplete="off" maxlength="80" required />
+        <button type="submit" class="primary">Add student</button>
+      </form>
+      <p class="fineprint">Notes are saved only on the computer running this app. Conversations are sent to Anthropic's API to generate replies.</p>
+    </section>
+  </main>
+
+  <!-- Interview -->
+  <main id="view-interview" class="view" hidden>
+    <div class="interview">
+      <section class="chat">
+        <div id="messages" class="messages" aria-live="polite"></div>
+        <div class="composer">
+          <button id="micBtn" class="mic" title="Hold to talk, or click to start/stop" aria-label="Talk">
+            <svg viewBox="0 0 24 24" width="26" height="26"><path fill="currentColor" d="M12 14a3 3 0 0 0 3-3V5a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3Zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11h-2Z"/></svg>
+          </button>
+          <textarea id="input" rows="1" placeholder="Talk with the mic, or type here…"></textarea>
+          <button id="sendBtn" class="primary">Send</button>
+        </div>
+        <div class="controls">
+          <label><input type="checkbox" id="speakToggle" checked /> Read replies aloud</label>
+          <label><input type="checkbox" id="handsFree" /> Hands-free (listen after each reply)</label>
+          <span id="micStatus" class="mic-status"></span>
+          <button id="wrapBtn" class="link">Wrap up for today</button>
+        </div>
+      </section>
+      <aside class="progress">
+        <h3>Progress</h3>
+        <p class="hint">Tap a topic to talk about it next.</p>
+        <ul id="progressList"></ul>
+        <div class="counts" id="counts"></div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- Notebook -->
+  <main id="view-notebook" class="view" hidden>
+    <div class="page">
+      <div class="page-head">
+        <h2>Notebook</h2>
+        <p class="hint">Everything the interviewer saved. Fix anything that's wrong — the brag sheet is built from this. Items marked <span class="pill private">private</span> stay out of brag sheets unless you include them.</p>
+      </div>
+      <section class="profile-card">
+        <h3>Profile</h3>
+        <div class="grid" id="profileForm"></div>
+      </section>
+      <section>
+        <h3>Experience Evidence Cards</h3>
+        <div id="cards"></div>
+      </section>
+      <section>
+        <h3>Notes by topic</h3>
+        <div id="notes"></div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Brag sheet -->
+  <main id="view-sheet" class="view" hidden>
+    <div class="page">
+      <div class="page-head no-print">
+        <h2>Brag sheet</h2>
+        <p class="hint">Make a separate version for each teacher, with a moment from their class. Review every line before sharing — edit text directly on the sheet.</p>
+      </div>
+      <section class="no-print recommenders">
+        <h3>Recommenders</h3>
+        <div id="recList"></div>
+        <form id="recForm" class="rec-form">
+          <input name="name" placeholder="Name (e.g. Ms. Rivera)" required />
+          <input name="role" placeholder="Role (e.g. AP Bio teacher)" />
+          <input name="course" placeholder="Course & year" />
+          <button class="secondary">Add</button>
+        </form>
+      </section>
+      <section class="no-print generate">
+        <label>Version for
+          <select id="recSelect"></select>
+        </label>
+        <label><input type="checkbox" id="includePrivate" /> Include private notes</label>
+        <button id="genBtn" class="primary">Generate brag sheet</button>
+        <span id="genStatus" class="hint"></span>
+      </section>
+      <section class="no-print">
+        <label>Saved versions <select id="sheetSelect"></select></label>
+        <button id="saveSheet" class="secondary">Save edits</button>
+        <button id="printSheet" class="secondary">Print / PDF</button>
+        <button id="copySheet" class="secondary">Copy as text</button>
+        <button id="deleteSheet" class="link danger">Delete version</button>
+      </section>
+      <div id="gaps" class="gaps no-print"></div>
+      <article id="sheet" class="sheet"></article>
+    </div>
+  </main>
+
+  <dialog id="passDialog">
+    <form method="dialog">
+      <p>Enter the household passcode</p>
+      <input id="passInput" type="password" autocomplete="current-password" />
+      <button class="primary">OK</button>
+    </form>
+  </dialog>
+
+  <script src="app.js" type="module"></script>
+</body>
+</html>
