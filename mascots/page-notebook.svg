@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <ellipse cx="200" cy="378" rx="110" ry="12" fill="#000" opacity=".08"/>
+  <!-- legs -->
+  <path d="M168 330v32M232 330v32" stroke="#2B2D42" stroke-width="8" stroke-linecap="round"/>
+  <ellipse cx="160" cy="366" rx="20" ry="10" fill="#2B2D42"/>
+  <ellipse cx="240" cy="366" rx="20" ry="10" fill="#2B2D42"/>
+  <!-- waving arm (left) -->
+  <path d="M112 200C84 186 74 160 80 130" stroke="#2B2D42" stroke-width="8" fill="none" stroke-linecap="round"/>
+  <circle cx="80" cy="122" r="14" fill="#fff" stroke="#2B2D42" stroke-width="6"/>
+  <path d="M60 104q-6 8-2 18M56 90q-12 14-6 34" stroke="#FFC94D" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <!-- pages + cover -->
+  <rect x="122" y="66" width="170" height="270" rx="16" fill="#FDF8EE" stroke="#2B2D42" stroke-width="6"/>
+  <rect x="110" y="58" width="172" height="272" rx="18" fill="#2EC4A6" stroke="#2B2D42" stroke-width="6"/>
+  <!-- bookmark -->
+  <path d="M250 326v34l12-10 12 10v-36" fill="#F2667A" stroke="#2B2D42" stroke-width="5" stroke-linejoin="round"/>
+  <!-- spiral -->
+  <g fill="none" stroke="#2B2D42" stroke-width="6" stroke-linecap="round">
+    <path d="M104 90h22M104 130h22M104 170h22M104 210h22M104 250h22M104 290h22"/>
+  </g>
+  <g fill="#FDF8EE" stroke="#2B2D42" stroke-width="4">
+    <circle cx="132" cy="90" r="5"/><circle cx="132" cy="130" r="5"/><circle cx="132" cy="170" r="5"/>
+    <circle cx="132" cy="210" r="5"/><circle cx="132" cy="250" r="5"/><circle cx="132" cy="290" r="5"/>
+  </g>
+  <!-- label -->
+  <rect x="152" y="86" width="104" height="34" rx="8" fill="#FDF8EE" stroke="#2B2D42" stroke-width="4"/>
+  <path d="M166 100h60M166 110h40" stroke="#B8C1CC" stroke-width="4" stroke-linecap="round"/>
+  <!-- face -->
+  <ellipse cx="178" cy="176" rx="12" ry="16" fill="#2B2D42"/>
+  <ellipse cx="236" cy="176" rx="12" ry="16" fill="#2B2D42"/>
+  <circle cx="182" cy="169" r="5" fill="#fff"/><circle cx="240" cy="169" r="5" fill="#fff"/>
+  <path d="M184 214q23 26 46 0z" fill="#2B2D42" stroke="#2B2D42" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M196 224q11 8 22 0" fill="#F2667A"/>
+  <ellipse cx="160" cy="208" rx="13" ry="8" fill="#FFB3BF" opacity=".85"/>
+  <ellipse cx="256" cy="208" rx="13" ry="8" fill="#FFB3BF" opacity=".85"/>
+  <!-- star sticker -->
+  <g transform="rotate(14 250 286)">
+    <path d="M250 262l8 16 18 3-13 12 3 18-16-9-16 9 3-18-13-12 18-3z" fill="#FFC94D" stroke="#2B2D42" stroke-width="4" stroke-linejoin="round"/>
+  </g>
+  <!-- right arm holding pencil -->
+  <path d="M282 230C306 236 318 226 322 204" stroke="#2B2D42" stroke-width="8" fill="none" stroke-linecap="round"/>
+  <g transform="rotate(28 326 170)">
+    <rect x="316" y="110" width="20" height="74" rx="3" fill="#FFC94D" stroke="#2B2D42" stroke-width="4"/>
+    <rect x="316" y="98" width="20" height="16" rx="5" fill="#F58FA3" stroke="#2B2D42" stroke-width="4"/>
+    <path d="M316 184l10 24 10-24z" fill="#F4D9B0" stroke="#2B2D42" stroke-width="4" stroke-linejoin="round"/>
+  </g>
+  <circle cx="322" cy="198" r="14" fill="#fff" stroke="#2B2D42" stroke-width="6"/>
+</svg>
