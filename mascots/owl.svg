@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <filter id="fuzz" filterUnits="userSpaceOnUse" x="0" y="0" width="400" height="400">
+      <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="2" seed="3"/>
+      <feDisplacementMap in="SourceGraphic" scale="3.5"/>
+    </filter>
+    <filter id="glow" filterUnits="userSpaceOnUse" x="0" y="0" width="400" height="400"><feGaussianBlur stdDeviation="9"/></filter>
+    <radialGradient id="shade" cx="38%" cy="26%" r="80%">
+      <stop offset="0" stop-color="#B5A493"/><stop offset=".65" stop-color="#8F7B68"/><stop offset="1" stop-color="#6E5B4A"/>
+    </radialGradient>
+    <radialGradient id="face" cx="45%" cy="35%" r="75%">
+      <stop offset="0" stop-color="#F7F0E4"/><stop offset="1" stop-color="#E3D6C2"/>
+    </radialGradient>
+    <radialGradient id="orb" cx="38%" cy="32%" r="70%">
+      <stop offset="0" stop-color="#FFFFFF"/><stop offset=".35" stop-color="#CFE3FF"/>
+      <stop offset=".7" stop-color="#8DB3F7"/><stop offset="1" stop-color="#B9A6F0"/>
+    </radialGradient>
+  </defs>
+  <ellipse cx="200" cy="368" rx="120" ry="11" fill="#000" opacity=".07"/>
+  <g filter="url(#fuzz)">
+    <path d="M136 126L128 86Q128 78 136 82L178 112Z" fill="#8F7B68" stroke="#8F7B68" stroke-width="12" stroke-linejoin="round"/>
+    <path d="M264 126L272 86Q272 78 264 82L222 112Z" fill="#8F7B68" stroke="#8F7B68" stroke-width="12" stroke-linejoin="round"/>
+    <circle cx="200" cy="232" r="124" fill="url(#shade)"/>
+    <ellipse cx="156" cy="354" rx="30" ry="13" fill="#E9A23B"/>
+    <ellipse cx="244" cy="354" rx="30" ry="13" fill="#E9A23B"/>
+  </g>
+  <circle cx="168" cy="200" r="46" fill="url(#face)" filter="url(#fuzz)"/>
+  <circle cx="232" cy="200" r="46" fill="url(#face)" filter="url(#fuzz)"/>
+  <path d="M166 196h18a9 9 0 0 1-18 0z" fill="#16151A"/>
+  <path d="M216 196h18a9 9 0 0 1-18 0z" fill="#16151A"/>
+  <path d="M163 195h24M213 195h24" stroke="#16151A" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="179" cy="200" r="1.8" fill="#fff"/><circle cx="229" cy="200" r="1.8" fill="#fff"/>
+  <path d="M190 220h20l-10 16z" fill="#E9A23B" stroke="#E9A23B" stroke-width="5" stroke-linejoin="round"/>
+  <g fill="none" stroke="#7B6856" stroke-width="3" stroke-linecap="round" opacity=".7">
+    <path d="M176 268q8 6 16 0M208 268q8 6 16 0M192 282q8 6 16 0"/>
+  </g>
+  <g filter="url(#fuzz)">
+    <path d="M100 250C110 300 160 320 226 306C190 300 150 280 132 240Z" fill="#7A6755"/>
+    <path d="M300 250C290 300 240 320 174 306C210 300 250 280 268 240Z" fill="#846F5C"/>
+  </g>
+  <circle cx="64" cy="128" r="30" fill="#9CC1FF" opacity=".55" filter="url(#glow)"/>
+  <circle cx="64" cy="128" r="22" fill="url(#orb)"/>
+  <ellipse cx="64" cy="131" rx="14" ry="4" fill="none" stroke="#fff" stroke-width="2" opacity=".75" transform="rotate(-18 64 131)"/>
+  <ellipse cx="57" cy="119" rx="6" ry="4" fill="#fff" opacity=".8"/>
+</svg>

@@ -1,15 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
   <defs>
-    <!-- big soft tufts on the silhouette, then fine fuzz -->
-    <filter id="fluff" filterUnits="userSpaceOnUse" x="0" y="0" width="400" height="400">
-      <feTurbulence type="fractalNoise" baseFrequency="0.06" numOctaves="3" seed="7" result="t1"/>
-      <feDisplacementMap in="SourceGraphic" in2="t1" scale="12" result="d1"/>
-      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" seed="2" result="t2"/>
-      <feDisplacementMap in="d1" in2="t2" scale="4"/>
-    </filter>
     <filter id="fuzz" filterUnits="userSpaceOnUse" x="0" y="0" width="400" height="400">
-      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" seed="4"/>
-      <feDisplacementMap in="SourceGraphic" scale="3"/>
+      <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="2" seed="3"/>
+      <feDisplacementMap in="SourceGraphic" scale="3.5"/>
     </filter>
     <filter id="glow" filterUnits="userSpaceOnUse" x="0" y="0" width="400" height="400"><feGaussianBlur stdDeviation="9"/></filter>
     <radialGradient id="shade" cx="38%" cy="26%" r="80%">
@@ -24,47 +17,33 @@
     </radialGradient>
   </defs>
   <ellipse cx="200" cy="368" rx="120" ry="11" fill="#000" opacity=".07"/>
-
-  <g filter="url(#fluff)">
-    <!-- tail, curling up behind -->
-    <path d="M290 318C350 312 372 252 350 196" stroke="#A8A39B" stroke-width="54" fill="none" stroke-linecap="round"/>
-    <path d="M290 318C350 312 372 252 350 196" stroke="#55514C" stroke-width="54" fill="none" stroke-dasharray="20 24" stroke-dashoffset="-14" stroke-linecap="butt"/>
-    <!-- ears -->
+  <g filter="url(#fuzz)">
+    <path d="M290 318C350 312 372 252 350 196" stroke="#A8A39B" stroke-width="50" fill="none" stroke-linecap="round"/>
+    <path d="M290 318C350 312 372 252 350 196" stroke="#55514C" stroke-width="50" fill="none" stroke-dasharray="20 24" stroke-dashoffset="-14"/>
     <path d="M110 160L112 82Q116 70 128 76L184 122Z" fill="#A8A39B" stroke="#A8A39B" stroke-width="16" stroke-linejoin="round"/>
     <path d="M290 160L288 82Q284 70 272 76L216 122Z" fill="#A8A39B" stroke="#A8A39B" stroke-width="16" stroke-linejoin="round"/>
-    <!-- the ball -->
+    <path d="M122 106L124 90L150 112Z" fill="#E9C7C9" opacity=".7"/>
+    <path d="M278 106L276 90L250 112Z" fill="#E9C7C9" opacity=".7"/>
     <circle cx="200" cy="232" r="124" fill="url(#shade)"/>
-    <!-- feet -->
     <ellipse cx="156" cy="354" rx="30" ry="13" fill="#958F87"/>
     <ellipse cx="244" cy="354" rx="30" ry="13" fill="#958F87"/>
   </g>
-  <path d="M122 104L124 90L150 112Z" fill="#E9C7C9" opacity=".7"/>
-  <path d="M278 104L276 90L250 112Z" fill="#E9C7C9" opacity=".7"/>
-
-  <!-- face window -->
   <ellipse cx="200" cy="204" rx="74" ry="56" fill="url(#face)" filter="url(#fuzz)"/>
-  <!-- mask -->
   <path d="M136 196C142 176 172 174 186 188Q200 198 214 188C228 174 258 176 264 196C268 212 248 218 230 214Q200 206 170 214C152 218 132 212 136 196Z" fill="#5E5A55"/>
-  <!-- half-lidded eyes: calm, sure of itself -->
   <path d="M166 196h18a9 9 0 0 1-18 0z" fill="#16151A"/>
   <path d="M216 196h18a9 9 0 0 1-18 0z" fill="#16151A"/>
   <path d="M163 195h24M213 195h24" stroke="#16151A" stroke-width="3" stroke-linecap="round"/>
   <circle cx="179" cy="200" r="1.8" fill="#fff"/><circle cx="229" cy="200" r="1.8" fill="#fff"/>
-  <!-- nose + smirk -->
   <ellipse cx="200" cy="226" rx="6" ry="4" fill="#16151A"/>
   <path d="M189 238q11 6 23-4" stroke="#16151A" stroke-width="3" fill="none" stroke-linecap="round"/>
-  <ellipse cx="156" cy="226" rx="10" ry="5" fill="#F2B8C2" opacity=".5"/>
-  <ellipse cx="244" cy="226" rx="10" ry="5" fill="#F2B8C2" opacity=".5"/>
-
-  <!-- crossed arms -->
+  <ellipse cx="154" cy="226" rx="10" ry="5" fill="#F2B8C2" opacity=".5"/>
+  <ellipse cx="246" cy="226" rx="10" ry="5" fill="#F2B8C2" opacity=".5"/>
   <g filter="url(#fuzz)">
     <path d="M116 284Q170 310 236 300" stroke="#8C867E" stroke-width="34" fill="none" stroke-linecap="round"/>
     <path d="M116 284Q170 310 236 300" stroke="#A39E96" stroke-width="28" fill="none" stroke-linecap="round"/>
     <path d="M284 284Q230 312 164 304" stroke="#8C867E" stroke-width="34" fill="none" stroke-linecap="round"/>
     <path d="M284 284Q230 312 164 304" stroke="#ADA8A0" stroke-width="28" fill="none" stroke-linecap="round"/>
   </g>
-
-  <!-- the memory orb it just found, floating nearby -->
   <circle cx="64" cy="128" r="30" fill="#9CC1FF" opacity=".55" filter="url(#glow)"/>
   <circle cx="64" cy="128" r="22" fill="url(#orb)"/>
   <ellipse cx="64" cy="131" rx="14" ry="4" fill="none" stroke="#fff" stroke-width="2" opacity=".75" transform="rotate(-18 64 131)"/>

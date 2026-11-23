@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <filter id="fuzz" filterUnits="userSpaceOnUse" x="0" y="0" width="400" height="400">
+      <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="2" seed="3"/>
+      <feDisplacementMap in="SourceGraphic" scale="3.5"/>
+    </filter>
+    <filter id="glow" filterUnits="userSpaceOnUse" x="0" y="0" width="400" height="400"><feGaussianBlur stdDeviation="9"/></filter>
+    <radialGradient id="shade" cx="38%" cy="26%" r="80%">
+      <stop offset="0" stop-color="#56627A"/><stop offset=".65" stop-color="#323C52"/><stop offset="1" stop-color="#1F2738"/>
+    </radialGradient>
+    <radialGradient id="face" cx="45%" cy="35%" r="75%">
+      <stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#ECEFF3"/>
+    </radialGradient>
+    <radialGradient id="orb" cx="38%" cy="32%" r="70%">
+      <stop offset="0" stop-color="#FFFFFF"/><stop offset=".35" stop-color="#CFE3FF"/>
+      <stop offset=".7" stop-color="#8DB3F7"/><stop offset="1" stop-color="#B9A6F0"/>
+    </radialGradient>
+  </defs>
+  <ellipse cx="200" cy="368" rx="120" ry="11" fill="#000" opacity=".07"/>
+  <g filter="url(#fuzz)">
+    <circle cx="200" cy="232" r="124" fill="url(#shade)"/>
+    <ellipse cx="156" cy="354" rx="30" ry="13" fill="#F0A23A"/>
+    <ellipse cx="244" cy="354" rx="30" ry="13" fill="#F0A23A"/>
+  </g>
+  <path d="M118 210C118 170 150 150 200 178C250 150 282 170 282 210C282 300 250 340 200 340C150 340 118 300 118 210Z" fill="url(#face)" filter="url(#fuzz)"/>
+  <path d="M166 196h18a9 9 0 0 1-18 0z" fill="#16151A"/>
+  <path d="M216 196h18a9 9 0 0 1-18 0z" fill="#16151A"/>
+  <path d="M163 195h24M213 195h24" stroke="#16151A" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="179" cy="200" r="1.8" fill="#fff"/><circle cx="229" cy="200" r="1.8" fill="#fff"/>
+  <path d="M188 220h24l-12 13z" fill="#F0A23A" stroke="#F0A23A" stroke-width="6" stroke-linejoin="round"/>
+  <ellipse cx="154" cy="226" rx="10" ry="5" fill="#F2B8C2" opacity=".5"/>
+  <ellipse cx="246" cy="226" rx="10" ry="5" fill="#F2B8C2" opacity=".5"/>
+  <g filter="url(#fuzz)">
+    <ellipse cx="88" cy="262" rx="20" ry="50" fill="#26304A" transform="rotate(28 88 262)"/>
+    <ellipse cx="312" cy="262" rx="20" ry="50" fill="#26304A" transform="rotate(-28 312 262)"/>
+  </g>
+  <circle cx="64" cy="128" r="30" fill="#9CC1FF" opacity=".55" filter="url(#glow)"/>
+  <circle cx="64" cy="128" r="22" fill="url(#orb)"/>
+  <ellipse cx="64" cy="131" rx="14" ry="4" fill="none" stroke="#fff" stroke-width="2" opacity=".75" transform="rotate(-18 64 131)"/>
+  <ellipse cx="57" cy="119" rx="6" ry="4" fill="#fff" opacity=".8"/>
+</svg>
