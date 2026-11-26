@@ -21,6 +21,7 @@ The interview structure comes from two templates in the owner's Dropbox: `/_CLAU
 - Always tell Lovable: "Don't publish", "use only fake data in tests", which prompts must stay byte-identical, and to reply briefly with test results.
 - Verify yourself afterwards (diff, DB queries). Lovable's self-reports have been accurate so far but check data changes (e.g. hash `notes.text` before/after backfills).
 - Typical cost: 2–10 Lovable credits per change.
+- Real billed costs can't be pulled from here: Anthropic Admin keys can't be saved as a network secret for this environment, and Gemini has no usage API. `ai_usage` holds real token counts per call; costs are tokens × `model_prices`.
 
 ## Key files in the Lovable project
 - `src/lib/server/llm.ts`: provider layer (anthropic, openai, google, perplexity), `streamChat`, `generateJson`, `geminiTts`, `listModels`.
@@ -45,7 +46,7 @@ The interview structure comes from two templates in the owner's Dropbox: `/_CLAU
 ## Current model choices (based on tests)
 - Interviewer: `claude-sonnet-5-5`, effort low (~91 avg in tests; Haiku stacked questions).
 - Note-taker: `claude-haiku-5-5`, effort medium (also writes display_text, needs_check, activity_upserts).
-- Brag sheet writer: `claude-opus-5-5`, effort high.
+- Brag sheet writer: `claude-opus-5-5`, effort high, max_tokens 16000 (8000 ran out: thinking counts against the limit; a 36-note notebook hit it).
 - Voice: `gemini-3.8-flash-tts`, voice "Kore", 1.2×. It returns WAV (not raw PCM) — `pcm-clean` handles it.
 - Measured cost (owner test 2026-11-25, 55 answers): $0.48 total ≈ $0.009/answer (counselor 67%, voice 25%, notes 8%); ~$0.26 per 30-answer session. Counselor first token ~0.8 s, first audio ~4.6 s.
 
@@ -59,7 +60,7 @@ The interview structure comes from two templates in the owner's Dropbox: `/_CLAU
 - Brag sheet must not show provenance tags, `[Need:]` placeholders, other students' names, guessed quotes, or repeat facts; `sheetIssues()` checks this.
 
 ## Status (as of 2026-11-26)
-- Latest Lovable commit: `7f363251` (friendlier notebook). **Not yet published** at time of writing: scrolling fix, notebook tabs + add dialogs, "My story" first-person notes. Remind the owner to Publish → Update.
+- Latest Lovable commit: `75f51f47` (failed calls that hit the output limit or refuse now log real tokens and cost via `LlmStopError`). **Not yet published** at time of writing: scrolling fix, notebook tabs + add dialogs, "My story" first-person notes, usage-logging fix. Remind the owner to Publish → Update.
 - Existing brag sheets were made with old instructions: students must click Generate again (and add last name).
 - Known open issues: interviewer still occasionally joins two asks in one sentence (~3/10 test replies); one test reply exceeded the length limit.
 - Optional ideas not done: safety check-in question ("are you safe right now?") in crisis replies; Gemini Live (audio-to-audio) interviewer; Common App export (activities list maps to 10 activities / 5 honors).
