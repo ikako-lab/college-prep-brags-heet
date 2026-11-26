@@ -1,6 +1,6 @@
 # College Prep Brag Sheet
 
-The live app is being built in Lovable (with a Lovable Cloud / Supabase backend).
+The live app is built in Lovable (project "BragStoryMaker", with a Lovable Cloud / Supabase backend) and published at https://bragstorymaker.lovable.app. See `CLAUDE.md` for the current design, models, costs, status and how changes are made.
 
 This repo has a reference copy of the interview design, taken from the
 "High School Brag Sheet Discovery Workbook" and "Summary Template":
