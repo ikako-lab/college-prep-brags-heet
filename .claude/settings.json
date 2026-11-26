@@ -1,7 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "mcp__Lovable"
+      "mcp__Lovable",
+      "mcp__Lovable__*",
+      "mcp__Lovable__query_database"
     ]
   }
 }
