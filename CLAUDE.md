@@ -46,7 +46,7 @@ The interview structure comes from two templates in the owner's Dropbox: `/_CLAU
 ## Current model choices (based on tests)
 - Interviewer: `claude-sonnet-5-5`, effort low (~91 avg in tests; Haiku stacked questions).
 - Note-taker: `claude-haiku-5-5`, effort medium (also writes display_text, needs_check, activity_upserts).
-- Brag sheet writer: `claude-opus-5-5`, effort high, max_tokens 16000 (8000 ran out: thinking counts against the limit; a 36-note notebook hit it).
+- Brag sheet writer: `claude-sonnet-5-5`, effort medium, max_tokens 16000 (owner's choice on 2026-11-27 "for now"; was Opus high. 8000 tokens ran out at Opus high: thinking counts against the limit).
 - Voice: `gemini-3.8-flash-tts`, voice "Kore", 1.2×. It returns WAV (not raw PCM) — `pcm-clean` handles it.
 - Measured cost (owner test 2026-11-25, 55 answers): $0.48 total ≈ $0.009/answer (counselor 67%, voice 25%, notes 8%); ~$0.26 per 30-answer session. Counselor first token ~0.8 s, first audio ~4.6 s.
 
